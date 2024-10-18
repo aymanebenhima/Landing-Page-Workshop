@@ -1,0 +1,775 @@
+:root {
+    --font-size-base: 1rem; /* 10px */
+    --font-size-cta: 0.93rem; /* 9.3px */
+    --font-size-h1: 2.67rem; /* 26.7px */
+    --font-size-h2: 3.2rem; /* 32px */
+    --font-size-h3: 4.8rem; /* 48px */
+    --font-size-nav: 1.6rem; /* 16px */
+    --font-size-underline: 2px; /* 2px */
+    --font-size-description: 1.07rem; /* 10.7px */
+    --font-size-about-description: 1rem; /* 10px */
+    --padding-small: 0.5rem; /* 5px */
+    --padding-medium: 1rem; /* 10px */
+    --padding-large: 2rem; /* 20px */
+    --margin-small: 1rem; /* 10px */
+    --margin-medium: 1.6rem; /* 16px */
+    --margin-large: 2.67rem; /* 26.7px */
+    --margin-xlarge: 4.26rem; /* 42.6px */
+    --margin-xxlarge: 10.87rem; /* 108.7px */
+    --header-min-height: 43.3rem; /* 433px */
+    --container-max-width: 74rem; /* 740px */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 1441px) {
+  body {
+    box-shadow: 0px 34px 40px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+a:focus,
+button:focus,
+.skip-links:focus {
+  outline: 2px dotted #c355d8;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+img,
+picture {
+ /* Indice 1 : Ajustez la taille maximale pour s'assurer qu'elle ne dépasse pas son conteneur. Utilisez la propriété max-width et donnez-lui une valeur de 100%. */ 
+  /* Indice 2 : Gardez les proportions de l'image lorsque vous modifiez la largeur. Insérez la propriété height et donnez-lui la valeur auto. */ 
+  /* Indice 3 : Changez le type d'affichage pour éviter un espacement indésirable. Utilisez la propriété display et donnez-lui la valeur block, puis regardez le changement. */ 
+}
+
+.skip-links {
+  background: #c355d8;
+  color: #fff;
+  padding: var(--padding-small);
+  left: var(--padding-small);
+  top: 0;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-links:focus {
+  transform: translateY(0%);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* Sélecteur pour le conteneur principal */
+.container {
+    /* Indice 1 : Définissez la largeur à 90% du conteneur parent. Utilisez la propriété width. */
+    /* Indice 2 : Spécifiez une largeur maximale en utilisant une variable CSS. Utilisez max-width avec --container-max-width. */
+    /* Indice 3 : Centre le conteneur horizontalement en utilisant margin. Donnez-lui la valeur 0 auto. */
+  }
+  
+@media screen and (min-width: 992px) {
+    .container {
+        /* Indice 4 : Changez la largeur à 95% pour les écrans plus larges. */
+        /* Indice 5 : Ajoutez un remplissage à gauche en utilisant la propriété padding-left avec --padding-small. */
+    }
+}
+  
+* Sélecteur pour l'élément d'appel à l'action */
+.cta {
+  /* Indice 6 : Changez la couleur du texte en noir. Utilisez color. */
+  /* Indice 7 : Modifiez la taille de la police en utilisant une variable CSS. Utilisez font-size avec --font-size-cta. */
+  /* Indice 8 : Ajustez l'espacement des lettres en utilisant letter-spacing avec une valeur de 0.33rem. */
+  /* Indice 9 : Changez le type d'affichage en inline-block pour permettre le remplissage et la bordure. */
+  /* Indice 10 : Ajoutez une bordure avec une largeur de 1px. Utilisez border avec une valeur de 1px solid. */
+  /* Indice 11 : Ajoutez un remplissage à l'intérieur du bouton. Utilisez padding avec --padding-medium et --padding-large. */
+}
+
+.cta:hover {
+  /* Indice 12 : Changez la couleur de fond en noir au survol. Utilisez background-color. */
+  /* Indice 13 : Changez la couleur du texte en blanc au survol. Utilisez color. */
+}
+
+@media screen and (min-width: 768px) {
+  .cta {
+    /* Indice 14 : Modifiez le remplissage pour l'élément d'appel à l'action en utilisant padding. Mettez à jour la valeur pour --padding-medium et 0. */
+  }
+}
+
+/* Sélecteur pour souligner */
+.underline {
+  /* Indice 15 : Positionnez l'élément de manière relative. Utilisez position avec relative. */
+}
+
+.underline::after {
+  /* Indice 16 : Créez un contenu vide pour l'élément pseudo. Utilisez content avec une chaîne vide. */
+  /* Indice 17 : Positionnez l'élément pseudo de manière absolue. Utilisez position avec absolute. */
+  /* Indice 18 : Définissez la largeur à 0. */
+  /* Indice 19 : Changez l'opacité à 0 pour le rendre invisible au départ. */
+  /* Indice 20 : Ajustez la hauteur en utilisant une variable CSS. Utilisez height avec --font-size-underline. */
+  /* Indice 21 : Positionnez-le à gauche. Utilisez left avec 0. */
+  /* Indice 22 : Placez-le en bas de l'élément en utilisant bottom avec -0.43rem. */
+  /* Indice 23 : Changez la couleur de fond à blanc. */
+  /* Indice 24 : Ajoutez une transition pour l'animation de la largeur. Utilisez transition avec width 0.2s ease. */
+}
+
+.underline:hover::after {
+  /* Indice 25 : Rendre l'élément visible en augmentant l'opacité à 1. */
+  /* Indice 26 : Changez la largeur à 100% au survol. */
+}
+
+/* Sélecteur pour l'en-tête */
+.header {
+    /* Indice 27 : Ajoutez un fond avec un dégradé et une image. Utilisez background avec linear-gradient et une URL. */
+    /* Indice 28 : Assurez-vous que l'image couvre le conteneur. Utilisez background-size avec cover. */
+    /* Indice 29 : Empêchez la répétition de l'image. Utilisez background-repeat avec no-repeat. */
+    /* Indice 30 : Changez la couleur du texte en blanc. Utilisez color. */
+    /* Indice 31 : Définissez une hauteur minimale en utilisant une variable CSS. Utilisez min-height avec --header-min-height. */
+    /* Indice 32 : Ajoutez un remplissage en haut en utilisant padding-top avec --padding-large. */
+    /* Indice 33 : Transformez le texte en majuscules. Utilisez text-transform avec uppercase. */
+  }
+  
+  @media screen and (min-width: 992px) {
+    .header {
+      /* Indice 34 : Changez le fond pour les écrans plus larges avec une autre image. Utilisez background avec une nouvelle URL. */
+      /* Indice 35 : Assurez-vous que l'image couvre le conteneur. */
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    .header {
+      /* Indice 36 : Modifiez le remplissage avec --margin-xlarge et --margin-large pour les écrans plus larges. */
+    }
+  }
+  
+  /* Sélecteur pour les liens dans l'en-tête */
+  .header a {
+    /* Indice 37 : Changez la couleur des liens en blanc. */
+  }
+
+  #main {
+    /* Indice 38 : Ajoutez une marge supérieure avec --margin-xxlarge. */
+    /* Indice 39 : Ajoutez un remplissage avec --padding-medium. */
+    /* Indice 40 : Ajoutez une bordure de 2px solide et blanche. */
+    /* Indice 41 : Définissez une largeur maximale de 32rem. */
+  }
+  
+  @media screen and (min-width: 992px) {
+    #main {
+      /* Indice 42 : Modifiez la largeur maximale à 43.3rem pour les écrans plus larges. */
+      /* Indice 43 : Ajoutez un remplissage avec --padding-large pour le haut et les côtés. */
+      /* Indice 44 : Changez la marge supérieure à 8.67rem. */
+    }
+  }
+  
+  @media screen and (min-width: 350px) {
+    #main .header__title {
+      /* Indice 45 : Changez la taille de la police pour --font-size-h1. */
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    #main .header__title {
+      /* Indice 46 : Changez la taille de la police pour --font-size-h3. */
+      /* Indice 47 : Ajustez la hauteur de ligne à 97%. */
+    }
+  }
+
+/* Sélecteur pour le menu de navigation de l'en-tête */
+.header__nav {
+    /* Indice 48 : Utilisez flexbox pour organiser les éléments en ligne. Utilisez display avec flex. */
+    /* Indice 49 : Utilisez justify-content pour espacer les éléments. */
+  }
+  
+  .header__logo,
+  .nav__toggle {
+    /* Indice 50 : Positionnez l'élément de manière relative. Utilisez position avec relative. */
+    /* Indice 51 : Ajoutez un z-index de 100 pour le superposer. */
+  }
+
+  @media screen and (min-width: 992px) {
+    .nav__logo,
+    .nav__toggle {
+      /* Indice 52 : Réinitialisez la position à unset pour les écrans plus larges. */
+      /* Indice 53 : Réinitialisez le z-index à initial. */
+    }
+  }
+  
+  /* Sélecteur pour le bouton de navigation */
+  .nav__toggle {
+    /* Indice 54 : Changez le curseur en pointer pour indiquer qu'il est cliquable. */
+    /* Indice 55 : Supprimez l'arrière-plan. Utilisez background avec none. */
+    /* Indice 56 : Supprimez la bordure. Utilisez border avec none. */
+  }
+  
+  @media screen and (min-width: 992px) {
+    .nav__toggle {
+      /* Indice 57 : Cachez le bouton de navigation pour les écrans plus larges. Utilisez display avec none. */
+    }
+  }
+
+/* Sélecteur pour la liste de navigation */
+.nav__list {
+ /* Indice 58 : Positionnez la liste de manière absolue. */
+  /* Indice 59 : Placez la liste en haut de son conteneur. */
+  /* Indice 60 : Alignez la liste à droite du conteneur. */
+  /* Indice 61 : Alignez la liste à gauche du conteneur. */
+  /* Indice 62 : Définissez un z-index pour que la liste soit derrière d'autres éléments. */
+  /* Indice 63 : Définissez la hauteur de la liste pour qu'elle prenne toute la hauteur de la fenêtre. */
+  /* Indice 64 : Ajoutez un remplissage pour espacer le contenu de la liste. */
+  /* Indice 65 : Changez la couleur de fond de la liste en noir. */
+  /* Indice 66 : Rendez la liste invisible par défaut. */
+  /* Indice 67 : Rendre la liste transparente au départ. */
+  /* Indice 68 : Ajoutez une transition pour les changements d'opacité et de visibilité. */
+  }
+
+@media screen and (min-width: 992px) {
+    .nav__list {
+        /* Indice 69 : Annulez la position pour que la liste prenne son positionnement par défaut. 
+           Propriété : position; Valeur : unset; */
+        
+        /* Indice 70 : Réinitialisez le z-index pour qu'il soit au même niveau que les éléments par défaut. 
+           Propriété : z-index; Valeur : 0; */
+        
+        /* Indice 71 : Changez la hauteur de la liste pour qu'elle s'adapte au contenu. 
+           Propriété : height; Valeur : auto; */
+        
+        /* Indice 72 : Rendez la visibilité de la liste héritable par défaut. 
+           Propriété : visibility; Valeur : inherit; */
+        
+        /* Indice 73 : Rendre la liste complètement opaque. 
+           Propriété : opacity; Valeur : 1; */
+        
+        /* Indice 74 : Utilisez le fond hérité des éléments parents. 
+           Propriété : background; Valeur : inherit; */
+        
+        /* Indice 75 : Supprimez le remplissage pour la liste. 
+           Propriété : padding; Valeur : 0; */
+        
+        /* Indice 76 : Transformez le texte en majuscule pour chaque élément de la liste. 
+           Propriété : text-transform; Valeur : capitalize; */
+        
+        /* Indice 77 : Affichez la liste en utilisant le modèle de grille CSS. 
+           Propriété : display; Valeur : grid; */
+        
+        /* Indice 78 : Créez une grille avec cinq colonnes, où chaque colonne a une largeur maximale définie par le contenu. 
+           Propriété : grid-template-columns; Valeur : repeat(5, max-content); */
+        
+        /* Indice 79 : Ajoutez un espacement entre les colonnes de la grille. 
+           Propriété : column-gap; Valeur : 2.05rem; */
+        
+        /* Indice 80 : Alignez les éléments de la grille en bas. 
+           Propriété : align-items; Valeur : end; */
+      }      
+}
+
+.nav__list .nav__item {
+  padding-bottom: var(--padding-medium);
+}
+
+@media screen and (min-width: 768px) {
+  .nav__list .nav__item {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav__list .nav__item {
+    padding: 0;
+  }
+}
+
+.nav__list .nav__link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  transition: border 0.3s ease-out;
+}
+
+@media screen and (min-width: 992px) {
+  .nav__list .nav__link {
+    font-size: initial;
+    line-height: 167%;
+  }
+}
+
+.header__nav .active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0);
+}
+
+.about {
+  padding: 6.4rem 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .about {
+    padding: 10.67rem 0 12.27rem;
+  }
+
+  .about__content {
+    display: flex;
+    text-align: left;
+  }
+}
+
+.about .about__image {
+  margin: 0 auto;
+  flex: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .about .about__image {
+    height: 33.33rem;
+  }
+}
+
+.about__text-wrapper {
+  padding: 3.2rem 1rem 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .about__text-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-left: -10.73rem;
+    padding: 6.4rem 0 0 6.4rem;
+    flex: 1;
+    align-self: flex-end;
+    background-color: white;
+  }
+}
+
+.about .about__title {
+  font-size: 2.13rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .about .about__title {
+    font-size: 3.2rem;
+  }
+}
+
+.about .about__description {
+  opacity: 0.5;
+  line-height: 167%;
+  padding-top: 1.07rem;
+}
+
+@media screen and (min-width: 992px) {
+  .about .about__description {
+    padding-top: 1.67rem;
+  }
+}
+
+.creations {
+ /* Indice 81 : Alignez le texte au centre de la section créations. 
+     Propriété : text-align; Valeur : center; */
+  
+  /* Indice 82 : Transformez tout le texte en majuscules. 
+     Propriété : text-transform; Valeur : uppercase; */
+  
+  /* Indice 83 : Ajoutez un remplissage en bas de la section. 
+     Propriété : padding-bottom; Valeur : 6.4rem; */
+}
+
+@media screen and (min-width: 768px) {
+  .creations {
+    /* Indice 84 : Augmentez le remplissage en bas pour les écrans plus larges. 
+       Propriété : padding-bottom; Valeur : 12.27rem; */
+  }
+}
+
+@media screen and (min-width: 768px) {
+    .creations__content {
+      /* Indice 85 : Affichez le contenu en mode grille. 
+         Propriété : display; Valeur : grid; */
+      
+      /* Indice 86 : Créez deux colonnes avec des largeurs égales. 
+         Propriété : grid-template-columns; Valeur : repeat(2, 1fr); */
+      
+      /* Indice 87 : Définissez deux lignes pour la grille. 
+         Propriété : grid-template-rows; Valeur : 3.2rem 1fr; */
+      
+      /* Indice 88 : Attribuez des zones de grille pour l'organisation. 
+         Propriété : grid-template-areas; Valeur : "title cta" "gallery gallery"; */
+      
+      /* Indice 89 : Ajoutez un espacement entre les lignes de la grille. 
+         Propriété : row-gap; Valeur : 3.2rem; */
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .creations__content {
+      /* Indice 90 : Augmentez l'espacement entre les lignes pour les écrans plus larges. 
+         Propriété : row-gap; Valeur : 5.33rem; */
+    }
+  }
+  
+  .creations .creations__title {
+    /* Indice 91 : Définissez la taille de la police pour le titre. 
+       Propriété : font-size; Valeur : 2.13rem; */
+    
+    /* Indice 92 : Ajoutez un remplissage en bas du titre. 
+       Propriété : padding-bottom; Valeur : 3.2rem; */
+  }
+
+  @media screen and (min-width: 768px) {
+    .creations .creations__title {
+      /* Indice 93 : Attribuez une zone de grille pour le titre. 
+         Propriété : grid-area; Valeur : title; */
+      
+      /* Indice 94 : Justifiez le titre à gauche. 
+         Propriété : justify-self; Valeur : start; */
+      
+      /* Indice 95 : Supprimez le remplissage en bas pour les écrans plus larges. 
+         Propriété : padding-bottom; Valeur : 0; */
+      
+      /* Indice 96 : Alignez le titre au centre verticalement. 
+         Propriété : align-self; Valeur : center; */
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .creations .creations__title {
+      /* Indice 97 : Augmentez la taille de la police pour le titre. 
+         Propriété : font-size; Valeur : 3.2rem; */
+    }
+  }
+  
+  .creations__gallery {
+    /* Indice 98 : Attribuez une zone de grille pour la galerie. 
+       Propriété : grid-area; Valeur : gallery; */
+  }
+  
+
+  @media screen and (min-width: 768px) {
+    .creations__gallery {
+      /* Indice 99 : Affichez la galerie en mode grille. 
+         Propriété : display; Valeur : grid; */
+      
+      /* Indice 100 : Créez deux colonnes avec des largeurs égales. 
+         Propriété : grid-template-columns; Valeur : repeat(2, 1fr); */
+      
+      /* Indice 101 : Ajoutez un espacement entre les éléments de la galerie. 
+         Propriété : gap; Valeur : 2rem; */
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .creations__gallery {
+      /* Indice 102 : Augmentez le nombre de colonnes dans la galerie. 
+         Propriété : grid-template-columns; Valeur : repeat(4, 1fr); */
+    }
+  }
+  
+  .creations .creations__figure {
+    /* Indice 103 : Positionnez chaque figure relativement. 
+       Propriété : position; Valeur : relative; */
+    
+    /* Indice 104 : Ajoutez un margement en bas de chaque figure. 
+       Propriété : margin-bottom; Valeur : 1.6rem; */
+    
+    /* Indice 105 : Définissez un z-index pour superposer les éléments. 
+       Propriété : z-index; Valeur : 3; */
+    
+    /* Indice 106 : Changez la couleur du texte en blanc. 
+       Propriété : color; Valeur : white; */
+    
+    /* Indice 107 : Ajoutez une transition pour les effets de survol. 
+       Propriété : transition; Valeur : all 0.3s ease; */
+  }
+
+  @media screen and (min-width: 768px) {
+    .creations .creations__figure {
+      /* Indice 108 : Supprimez la marge en bas pour les écrans plus larges. 
+         Propriété : margin-bottom; Valeur : 0; */
+    }
+  }
+
+  .creations .creations__figure::before {
+    /* Indice 109 : Définissez le contenu avant la figure comme vide. 
+       Propriété : content; Valeur : ""; */
+    
+    /* Indice 110 : Positionnez le contenu avant de manière absolue. 
+       Propriété : position; Valeur : absolute; */
+    
+    /* Indice 111 : Définissez un z-index pour superposer le contenu. 
+       Propriété : z-index; Valeur : 2; */
+    
+    /* Indice 112 : Définissez la largeur à 100%. 
+       Propriété : width; Valeur : 100%; */
+    
+    /* Indice 113 : Alignez le contenu à gauche. 
+       Propriété : left; Valeur : 0; */
+    
+    /* Indice 114 : Positionnez le contenu en bas. 
+       Propriété : bottom; Valeur : 0; */
+    
+    /* Indice 115 : Définissez la hauteur à 100%. 
+       Propriété : height; Valeur : 100%; */
+    
+    /* Indice 116 : Appliquez un fond avec un dégradé linéaire. 
+       Propriété : background; Valeur : linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.0001) 28.89%, rgba(0, 0, 0, 0.601863) 100%); */
+    
+    /* Indice 117 : Ajoutez une transition pour le fond. 
+       Propriété : transition; Valeur : all 0.2s ease; */
+  }
+
+  .creations .creations__figure:hover {
+    /* Indice 118 : Changez la couleur du texte lors du survol. 
+       Propriété : color; Valeur : black; */
+  }
+  
+  .creations .creations__figure:hover::before {
+    /* Indice 119 : Changez le fond lors du survol. 
+       Propriété : background; Valeur : rgba(255, 255, 255, 0.75); */
+    
+    /* Indice 120 : Positionnez le contenu avant en haut. 
+       Propriété : top; Valeur : 0; */
+  }
+
+  .creations picture {
+    /* Indice 121 : Positionnez chaque image relativement. 
+       Propriété : position; Valeur : relative; */
+  }
+  
+  .creations .creations__image {
+    /* Indice 122 : Centrez chaque image horizontalement. 
+       Propriété : margin; Valeur : 0 auto; */
+    
+    /* Indice 123 : Définissez la largeur à 100% de l'élément parent. 
+       Propriété : width; Valeur : 100%; */
+  }
+
+  @media screen and (min-width: 768px) {
+    .creations .creations__image {
+      /* Indice 124 : Limitez la hauteur maximale de l'image pour les écrans plus larges. 
+         Propriété : max-height; Valeur : 30rem; */
+    }
+  }
+
+.creations .creations__caption {
+/* Indice 125 : Utilisez la police "Josefin Sans" pour la légende. 
+     Propriété : font-family; Valeur : "Josefin Sans", sans-serif; */
+  
+  /* Indice 126 : Définissez la taille de la police pour la légende. 
+     Propriété : font-size; Valeur : 1.6rem; */
+  
+  /* Indice 127 : Positionnez la légende de manière absolue. 
+     Propriété : position; Valeur : absolute; */
+  
+  /* Indice 128 : Alignez la légende en bas. 
+     Propriété : bottom; Valeur : 1.3rem; */
+  
+  /* Indice 129 : Alignez la légende à gauche. 
+     Propriété : left; Valeur : 1.3rem; */
+
+    /* Indice 130 : Définissez la largeur de l'élément. 
+    Propriété : width; Valeur : 8.2rem; */ /* Utilisé pour définir une largeur spécifique à l'élément. */
+
+    /* Indice 131 : Alignez le texte à gauche. 
+    Propriété : text-align; Valeur : left; */ /* Assure que le texte à l'intérieur de l'élément est aligné à gauche. */
+
+    /* Indice 132 : Définissez le niveau de superposition de l'élément. 
+    Propriété : z-index; Valeur : 5; */ /* Utilisé pour contrôler l'ordre d'affichage des éléments empilés ; un z-index plus élevé signifie que l'élément sera au-dessus des éléments avec un z-index plus bas. */
+}
+
+@media screen and (min-width: 992px) {
+  .creations .creations__caption {
+    /* Indice 133 : Définissez la taille de police pour les légendes. 
+    Propriété : font-size; Valeur : 2.13rem; */ /* Utilisé pour définir la taille du texte de la légende dans la classe .creations__caption. */
+
+    /* Indice 134 : Définissez la largeur de l'élément à la valeur automatique.
+    Propriété : width; Valeur : auto; */ /* Utilisé pour que la largeur de l'élément s'ajuste automatiquement à son contenu. */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .creations .creations__caption {
+    /* Indice 135 : Définissez la largeur de l'élément à 11.3rem pour les écrans plus larges.
+    Propriété : width; Valeur : 11.3rem; */ /* Définir une largeur spécifique pour les écrans d'une certaine taille. */
+
+    /* Indice 136 : Déplacez l'élément vers la droite avec une distance de 2.66rem.
+    Propriété : left; Valeur : 2.66rem; */ /* Contrôle la position horizontale de l'élément par rapport à son conteneur parent. */
+
+    /* Indice 137 : Déplacez l'élément vers le haut avec une distance de 2.13rem.
+    Propriété : bottom; Valeur : 2.13rem; */ /* Contrôle la position verticale de l'élément par rapport à son conteneur parent. */
+  }
+}
+
+.creations__link {
+    /* Indice 138 : Alignez le lien dans la grille à la zone désignée cta.
+    Propriété : grid-area; Valeur : cta; */ /* Définit la zone de grille où l'élément doit être placé. */
+
+    /* Indice 139 : Ajoutez un espace au-dessus du lien. 
+    Propriété : margin-top; Valeur : 0.67rem; */ /* Crée un espace au-dessus de l'élément pour le séparer des éléments environnants. */
+}
+
+.creations__link:hover {
+    /* Indice 140 : Changez le fond du lien au survol.
+    Propriété : background-color; Valeur : black; */ /* Modifie la couleur d'arrière-plan lorsque l'utilisateur survole le lien. */
+
+    /* Indice 141 : Changez la couleur du texte au survol.
+    Propriété : color; Valeur : white; */ /* Modifie la couleur du texte lorsque l'utilisateur survole le lien. */
+}
+
+@media screen and (min-width: 768px) {
+  .creations__link {
+    justify-self: end;
+    align-self: center;
+    width: 10.47rem;
+    height: 2.67rem;
+    margin-top: 0;
+  }
+}
+
+.footer {
+  background-color: black;
+  padding-top: 3.73rem;
+  text-align: center;
+  color: white;
+}
+
+@media screen and (min-width: 992px) {
+  .footer {
+    padding-top: 2.93rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1.6rem;
+    grid-template-areas: "logo icons" "nav copyright";
+    padding-bottom: 1.87rem;
+  }
+}
+
+.footer__logo {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .footer__logo {
+    grid-area: logo;
+    margin: 0;
+    width: 9.6rem;
+    height: 1.6rem;
+  }
+}
+
+.footer__nav-list {
+  padding: 2.13rem 0 3.2rem;
+}
+
+@media screen and (min-width: 992px) {
+  .footer__nav-list {
+    grid-area: nav;
+    display: flex;
+    gap: 2.13rem;
+    padding: 0;
+  }
+}
+
+.footer__nav-list li:not(:last-child) {
+  padding-bottom: 1.06rem;
+}
+
+@media screen and (min-width: 992px) {
+  .footer__nav-list li:not(:last-child) {
+    padding: 0;
+  }
+}
+
+.footer__nav-list a {
+  color: white;
+  line-height: 167%;
+}
+
+.footer__icons-list {
+  grid-area: icons;
+  padding-bottom: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1.6rem);
+  column-gap: 1.07rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 992px) {
+  .footer__icons-list {
+    justify-content: flex-end;
+    padding-bottom: 0;
+  }
+}
+
+.footer .footer__copyright {
+  opacity: 0.5;
+  padding-bottom: 2.73rem;
+}
+
+@media screen and (min-width: 992px) {
+  .footer .footer__copyright {
+    grid-area: copyright;
+    text-align: right;
+    padding-bottom: 0;
+  }
+}
